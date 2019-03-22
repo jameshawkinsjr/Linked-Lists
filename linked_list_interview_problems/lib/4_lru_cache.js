@@ -55,43 +55,57 @@
 // -----------
 // Let's code!
 // -----------
-// TODO: Implement the LRUCacheItem class here
+
 class LRUCacheItem {
   constructor(val = null, key = null) {
-
+    this.val = val;
+    this.key = key;
   }
 }
 
 // TODO: Implement the LRUCacheItem class here
 class LRUCache {
   constructor(limit) {
+    this.limit = limit;
+    this.list = new List();
+    this.cache = {};
 
   }
 
   // TODO: Implement the size method here
   size() {
+    Object.values(this.cache).length;
+    
 
   }
 
   // TODO: Implement the get method here
   get(key) {
-
+    let currentItem = cache[key];
+    this.promote(currentItem);
   }
 
   // TODO: Implement the set method here
   set(key, val) {
-
+    let newItem = new LRUCacheItem(val, key);
+    if (ifFull()){
+      this.prune();
+    }
+    this.promote(newItem);
   }
 
   isFull() {
+    this.size() === this.limit;
     
   }
 
   prune() {
-
+    // remove oldest item
   }
 
   promote(item) {
+
+    // add  item to back
 
   }
 }
